@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f0f2f5;
+  padding: 20px;
+  text-align: center;
+  color: #333;
+}
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+.filter-buttons {
+  margin-bottom: 30px;
+}
+.filter-buttons button {
+  padding: 10px 18px;
+  margin: 5px;
+  border: none;
+  border-radius: 25px;
+  background: #007bff;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.filter-buttons button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+.gallery .image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+  border-radius: 12px;
+}
+.gallery img:hover {
+  transform: scale(1.08);
+}
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 36px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+.nav-buttons {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  gap: 10px;
+}
+.nav-buttons button {
+  padding: 12px 20px;
+  font-size: 20px;
+  background-color: #ffffff10;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.nav-buttons button:hover {
+  background-color: #ffffff30;
+}
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
